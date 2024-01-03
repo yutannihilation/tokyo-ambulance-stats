@@ -1,4 +1,4 @@
-# 東京都の救急車出動件数の推移
+# 東京都の救急出動件数の推移
 
 ## データ
 
@@ -15,6 +15,8 @@ ArchiveのWeyback Machineに残っていたのでそこから値を拾う。
 
 - 2016:
   https://web.archive.org/web/20220308120657/https://www.tfd.metro.tokyo.lg.jp/hp-kyuukanka/katudojitai/28.pdf
+
+2023年のデータは、出動件数が最大になったことがニュースになったりはしているが、月ごとの数字などはまだなさそう。
 
 ### データ整形
 
@@ -116,7 +118,7 @@ ggplot(d, aes(month, count, colour = year)) +
   scale_color_viridis_d(option = "A", direction = -1, end = 0.9) +
   scale_x_continuous(breaks = 1:12) +
   scale_y_continuous(labels = scales::label_comma(accuracy = 1)) +
-  labs(x = "月", y = NULL, title = "東京都の救急出場件数",
+  labs(x = "月", y = NULL, title = "東京都の救急出動件数",
        caption = "出典：東京都消防庁「救急活動の現況」") +
   theme_minimal() +
   theme(
